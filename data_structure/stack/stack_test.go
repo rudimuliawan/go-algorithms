@@ -1,8 +1,8 @@
-package data_structure
+package stack
 
 import "testing"
 
-func TestStack_Pop(t *testing.T) {
+func TestStack(t *testing.T) {
 	s := Stack{}
 
 	s.Push(1)

@@ -1,13 +1,13 @@
-package data_structure
+package stack
 
-// Node stores information about data
-type Node struct {
+// node stores information about data
+type node struct {
 	val  any
-	next *Node
+	next *node
 }
 
 type Stack struct {
-	top    *Node
+	top    *node
 	Length int
 }
 
@@ -16,19 +16,19 @@ func (s *Stack) Peek() any {
 }
 
 func (s *Stack) GetItems() []any {
-	var data []any
+	var items []any
 	curr := s.top
 
 	for curr != nil {
-		data = append(data, curr.val)
+		items = append(items, curr.val)
 		curr = curr.next
 	}
 
-	return data
+	return items
 }
 
 func (s *Stack) Push(value any) {
-	newTop := &Node{val: value}
+	newTop := &node{val: value}
 	if s.top == nil {
 		s.top = newTop
 	} else {
